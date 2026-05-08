@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlipQuest — Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- START SCREEN -->
+  <div class="screen" id="start-screen">
+    <div class="hero-bg"></div>
+    <div class="start-content">
+      <div class="brand">
+        <span class="brand-icon">🃏</span>
+        <h1>Flip<em>Quest</em></h1>
+      </div>
+      <p class="tagline">Flip cards. Find pairs. Beat your best.</p>
+      <div class="difficulty-label">Choose difficulty</div>
+      <div class="diff-btns">
+        <button class="diff-btn active" data-pairs="6">
+          <span class="diff-name">Easy</span>
+          <span class="diff-sub">6 pairs · 12 cards</span>
+        </button>
+        <button class="diff-btn" data-pairs="8">
+          <span class="diff-name">Medium</span>
+          <span class="diff-sub">8 pairs · 16 cards</span>
+        </button>
+        <button class="diff-btn" data-pairs="10">
+          <span class="diff-name">Hard</span>
+          <span class="diff-sub">10 pairs · 20 cards</span>
+        </button>
+      </div>
+      <button class="btn-play" id="play-btn">Play Now</button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div class="screen hidden" id="game-screen">
+    <div class="game-topbar">
+      <button class="icon-btn" id="back-btn" title="Quit">←</button>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-val" id="moves-val">0</span>
+          <span class="stat-lbl">Moves</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val" id="timer-val">00:00</span>
+          <span class="stat-lbl">Time</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val" id="pairs-val">0</span>
+          <span class="stat-lbl">Pairs</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="restart-btn" title="Restart">↺</button>
+    </div>
+    <div class="board-wrap">
+      <div class="board" id="board"></div>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="screen hidden" id="result-screen">
+    <div class="result-wrap">
+      <div class="confetti-area" id="confetti-area"></div>
+      <div class="result-card">
+        <div class="trophy" id="trophy">🏆</div>
+        <h2 id="result-title">You Won!</h2>
+        <p id="result-sub">Here's how you did</p>
+        <div class="result-stats">
+          <div class="rs-item">
+            <span class="rs-num" id="r-time">—</span>
+            <span class="rs-lbl">Time</span>
+          </div>
+          <div class="rs-item">
+            <span class="rs-num" id="r-moves">—</span>
+            <span class="rs-lbl">Moves</span>
+          </div>
+          <div class="rs-item">
+            <span class="rs-num" id="r-rating">—</span>
+            <span class="rs-lbl">Rating</span>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="btn-play" id="play-again-btn">Play Again</button>
+          <button class="btn-outline" id="change-diff-btn">Change Difficulty</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
